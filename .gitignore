@@ -22,3 +22,8 @@ build
 eclipse
 run
 runs
+
+# added manually
+common/src/main/generated/.cache
+
+.DS_Store
