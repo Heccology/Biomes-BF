@@ -100,7 +100,11 @@ processResources {
             'java_version'                 : java_version,
             'nexuslib_version'    : nexuslib_version,
             'fabric_biolith_cursemaven'    : fabric_biolith_cursemaven,
-            'neoforge_biolith_cursemaven'  : neoforge_biolith_cursemaven
+            'neoforge_biolith_cursemaven'  : neoforge_biolith_cursemaven,
+            'fabric_bf_cursemaven'    : fabric_bf_cursemaven,
+            'neoforge_bf_cursemaven'  : neoforge_bf_cursemaven,
+            'modmenu_version'  : modmenu_version,
+            'cloth_config_version'  : cloth_config_version
     ]
 
     filesMatching(['pack.mcmeta', 'fabric.mod.json', 'META-INF/mods.toml', 'META-INF/neoforge.mods.toml', '*.mixins.json']) {

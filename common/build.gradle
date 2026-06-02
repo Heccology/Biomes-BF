@@ -23,6 +23,7 @@ repositories {
 dependencies {
     implementation files("nexuslib-neoforge-1.21.1-${nexuslib_version}.jar")
     implementation ("curse.maven:biolith-852512:${neoforge_biolith_cursemaven}")
+    implementation ("curse.maven:bountiful-fares-972289:${neoforge_bf_cursemaven}")
 
     compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'
     // fabric and neoforge both bundle mixinextras, so it is safe to use it in common

@@ -17,6 +17,12 @@
     "entrypoints": {
         "main": [
             "net.hecco.biomesbf.BiomesBFFabric"
+        ],
+        "fabric-datagen": [
+            "net.hecco.biomesbf.BiomesBFDatagen"
+        ],
+        "modmenu": [
+            "net.hecco.biomesbf.config.BBFModMenu"
         ]
     },
     "mixins": [

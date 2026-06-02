@@ -10,6 +10,7 @@ repositories {
 dependencies {
     implementation files("nexuslib-neoforge-1.21.1-${nexuslib_version}.jar")
     implementation ("curse.maven:biolith-852512:${neoforge_biolith_cursemaven}")
+    implementation ("curse.maven:bountiful-fares-972289:${neoforge_bf_cursemaven}")
 }
 
 neoForge {
@@ -51,3 +52,7 @@ neoForge {
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+sourceSets.main.resources {
+    srcDir project(":common").file('src/main/generated/').getAbsolutePath()
+}

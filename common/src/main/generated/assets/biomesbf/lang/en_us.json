@@ -1,0 +1,12 @@
+{
+  "biomesbf.configuration.common": "Gameplay",
+  "biomesbf.configuration.generate_blooming_forest": "Blooming Forests generate",
+  "biomesbf.configuration.generate_blooming_grove": "Blooming Groves generate",
+  "biomesbf.configuration.generate_blooming_oasis": "Blooming Oases generate",
+  "biomesbf.configuration.generate_blooming_river": "Blooming Rivers generate",
+  "biomesbf.configuration.generate_coconut_beach": "Coconut Beaches generate",
+  "biomesbf.configuration.generate_golden_savanna": "Golden Savannas generate",
+  "biomesbf.configuration.generate_walnut_forest": "Walnut Forests generate",
+  "biomesbf.configuration.restart_warning": "Requires a game restart to apply changes",
+  "biomesbf.configuration.title": "Biomes of Bountiful Fares Configuration"
+}
