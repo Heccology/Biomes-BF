@@ -11,6 +11,7 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.SurfaceRules;
@@ -39,6 +40,15 @@ public class BBFBiomes {
                 SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),
                         SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.sequence(blooming_oasis)))
         );
+        BiomePlacement.addOverworld(WALNUT_FOREST, new Climate.ParameterPoint(
+                Climate.Parameter.span(0.2F, 0.9F),        // temperature
+                Climate.Parameter.span(-0.3F, 0.5F),        // humidity
+                Climate.Parameter.span(0.25F, 0.6F),        // continentalness
+                Climate.Parameter.span(-0.5F, -0.05F),        // erosion
+                Climate.Parameter.span(0.0F, 0.0F),         // depth <!>
+                Climate.Parameter.span(-1F, 1F),     // weirdness
+                0 //offset(?)
+        ));
     }
 
     private static SurfaceRules.ConditionSource surfaceNoiseAbove(double value) {
