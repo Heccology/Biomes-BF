@@ -2,8 +2,10 @@
   "feature": "bountifulfares:patch_grassy_podzol",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 1
+      "type": "minecraft:noise_based_count",
+      "noise_factor": 20.0,
+      "noise_offset": 0.2,
+      "noise_to_count_ratio": 20
     },
     {
       "type": "minecraft:in_square"

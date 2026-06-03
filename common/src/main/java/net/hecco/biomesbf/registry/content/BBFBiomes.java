@@ -42,11 +42,11 @@ public class BBFBiomes {
         );
         BiomePlacement.addOverworld(WALNUT_FOREST, new Climate.ParameterPoint(
                 Climate.Parameter.span(0.2F, 0.9F),        // temperature
-                Climate.Parameter.span(-0.3F, 0.5F),        // humidity
+                Climate.Parameter.span(-0.1F, 0.4F),        // humidity
                 Climate.Parameter.span(0.25F, 0.6F),        // continentalness
                 Climate.Parameter.span(-0.5F, -0.05F),        // erosion
                 Climate.Parameter.span(0.0F, 0.0F),         // depth <!>
-                Climate.Parameter.span(-1F, 1F),     // weirdness
+                Climate.Parameter.span(-0.65F, -0.3F),     // weirdness
                 0 //offset(?)
         ));
     }
