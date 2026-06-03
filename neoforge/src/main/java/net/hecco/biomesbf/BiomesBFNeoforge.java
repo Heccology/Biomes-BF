@@ -19,6 +19,8 @@ public class BiomesBFNeoforge {
         BBFConfiguration.register();
         BBFNeoforgeConfigValues.register(container);
 
+        BiomesBF.init();
+
         eventBus.addListener(this::onCommonSetup);
     }
 

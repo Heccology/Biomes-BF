@@ -8,5 +8,7 @@
   "biomesbf.configuration.generate_golden_savanna": "Golden Savannas generate",
   "biomesbf.configuration.generate_walnut_forest": "Walnut Forests generate",
   "biomesbf.configuration.restart_warning": "Requires a game restart to apply changes",
-  "biomesbf.configuration.title": "Biomes of Bountiful Fares Configuration"
+  "biomesbf.configuration.title": "Biomes of Bountiful Fares Configuration",
+  "block.bountifulfares.golden_walnut_leaves": "Golden Walnut Leaves",
+  "itemgroup.biomesbf": "Biomes of Bountiful Fares"
 }

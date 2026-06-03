@@ -47,12 +47,12 @@ public class BBFBiomes {
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(COCONUT_BEACH), SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.state(Blocks.SANDSTONE.defaultBlockState())))
         );
         BiomePlacement.addOverworld(WALNUT_FOREST, new Climate.ParameterPoint(
-                Climate.Parameter.span(0.2F, 0.9F),        // temperature
-                Climate.Parameter.span(-0.1F, 0.4F),        // humidity
+                Climate.Parameter.span(0.1F, 0.7F),        // temperature
+                Climate.Parameter.span(-0.2F, 0.2F),        // humidity
                 Climate.Parameter.span(0.25F, 0.6F),        // continentalness
                 Climate.Parameter.span(-0.5F, -0.05F),        // erosion
                 Climate.Parameter.span(0.0F, 0.0F),         // depth <!>
-                Climate.Parameter.span(-0.65F, -0.3F),     // weirdness
+                Climate.Parameter.span(-0.8F, -0.07F),     // weirdness
                 0 //offset(?)
         ));
     }

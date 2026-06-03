@@ -1,18 +1,22 @@
 {
   "type": "minecraft:random_selector",
   "config": {
-    "default": "bountifulfares:bare_walnut",
+    "default": "bountifulfares:golden_walnut",
     "features": [
       {
-        "chance": 0.4,
+        "chance": 0.2,
         "feature": "bountifulfares:forest_walnut"
       },
       {
-        "chance": 0.6,
+        "chance": 0.5,
+        "feature": "bountifulfares:bare_walnut"
+      },
+      {
+        "chance": 0.4,
         "feature": "minecraft:fancy_oak_checked"
       },
       {
-        "chance": 0.8,
+        "chance": 0.6,
         "feature": "minecraft:oak"
       }
     ]
