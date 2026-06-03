@@ -40,6 +40,12 @@ public class BBFBiomes {
                 SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),
                         SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.sequence(blooming_oasis)))
         );
+        BiomePlacement.replaceOverworld(Biomes.BEACH, COCONUT_BEACH, 0.5f);
+        SurfaceGeneration.addOverworldSurfaceRules(
+                BiomesBF.id("rules/overworld"),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(COCONUT_BEACH), SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, SurfaceRules.state(Blocks.SANDSTONE.defaultBlockState())), SurfaceRules.state(Blocks.SAND.defaultBlockState()))),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(COCONUT_BEACH), SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.state(Blocks.SANDSTONE.defaultBlockState())))
+        );
         BiomePlacement.addOverworld(WALNUT_FOREST, new Climate.ParameterPoint(
                 Climate.Parameter.span(0.2F, 0.9F),        // temperature
                 Climate.Parameter.span(-0.1F, 0.4F),        // humidity
