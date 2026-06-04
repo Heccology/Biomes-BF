@@ -17,6 +17,7 @@ public class BBFItemGroups {
                     .icon(() -> new ItemStack(BFBlocks.WILD_PASSION_FRUIT_VINE.get()))
                     .displayItems((displayParameters, entries) -> {
                         entries.accept(BBFBlocks.GOLDEN_WALNUT_LEAVES.get());
+                        entries.accept(BBFBlocks.GOLDEN_WALNUT_SAPLING.get());
                     }).build());
 
     public static void register() {

@@ -3,18 +3,21 @@ package net.hecco.biomesbf.registry.content;
 import net.hecco.biomesbf.BiomesBF;
 import net.hecco.bountifulfares.definition.block.custom.FruitLeavesBlock;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
+import net.hecco.bountifulfares.registry.misc.BFConfiguredFeatures;
+import net.hecco.bountifulfares.registry.misc.BFSaplingGenerators;
 import net.hecco.nexuslib.lib.blockFamilyCreator.MinMiningToolTier;
 import net.hecco.nexuslib.lib.blockFamilyCreator.Mineables;
+import net.hecco.nexuslib.lib.publicBlocks.PublicSaplingBlock;
 import net.hecco.nexuslib.platform.NLServices;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.LeavesBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.function.Supplier;
 
 public class BBFBlocks {
@@ -23,10 +26,17 @@ public class BBFBlocks {
     public static final ArrayList<Supplier<Block>> SHOVEL_MINEABLE = new ArrayList<>();
     public static final ArrayList<Supplier<Block>> HOE_MINEABLE = new ArrayList<>();
 
+    public static final TreeGrower GOLDEN_WALNUT_SAPLING_GENERATOR = new TreeGrower("golden_walnut", 0f,
+            Optional.empty(),
+            Optional.empty(),
+            Optional.of(BBFConfiguredFeatures.GOLDEN_WALNUT_KEY),
+            Optional.empty(),
+            Optional.empty(),
+            Optional.empty());
+
     public static final Supplier<Block> GOLDEN_WALNUT_LEAVES = registerBlock("golden_walnut_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().ignitedByLava().pushReaction(PushReaction.DESTROY)));
-
-
-
+    public static final Supplier<Block> GOLDEN_WALNUT_SAPLING = registerBlock("golden_walnut_sapling", () -> new PublicSaplingBlock(GOLDEN_WALNUT_SAPLING_GENERATOR, BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).randomTicks().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+    public static final Supplier<Block> POTTED_GOLDEN_WALNUT_SAPLING = registerBlockNoItem("potted_golden_walnut_sapling", () -> new FlowerPotBlock(GOLDEN_WALNUT_SAPLING.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY)));
 
 
 

@@ -7,6 +7,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 
 @Mod(BiomesBF.BIOMESBF_MOD_ID)
@@ -21,7 +22,14 @@ public class BiomesBFNeoforge {
 
         BiomesBF.init();
 
+        eventBus.addListener(this::clientSetup);
         eventBus.addListener(this::onCommonSetup);
+    }
+
+
+    @SubscribeEvent
+    public void clientSetup(FMLClientSetupEvent event) {
+        BiomesBFClient.onInitializeClient();
     }
 
     @SubscribeEvent

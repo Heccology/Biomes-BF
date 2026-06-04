@@ -18,6 +18,9 @@
         "main": [
             "net.hecco.biomesbf.BiomesBFFabric"
         ],
+        "client": [
+            "net.hecco.biomesbf.BiomesBFFabricClient"
+        ],
         "fabric-datagen": [
             "net.hecco.biomesbf.BiomesBFDatagen"
         ],

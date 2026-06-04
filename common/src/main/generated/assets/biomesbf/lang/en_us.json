@@ -10,5 +10,7 @@
   "biomesbf.configuration.restart_warning": "Requires a game restart to apply changes",
   "biomesbf.configuration.title": "Biomes of Bountiful Fares Configuration",
   "block.bountifulfares.golden_walnut_leaves": "Golden Walnut Leaves",
+  "block.bountifulfares.golden_walnut_sapling": "Golden Walnut Sapling",
+  "block.bountifulfares.potted_golden_walnut_sapling": "Golden Walnut Sapling",
   "itemgroup.biomesbf": "Biomes of Bountiful Fares"
 }
