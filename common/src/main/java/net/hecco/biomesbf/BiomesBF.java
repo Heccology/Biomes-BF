@@ -1,6 +1,7 @@
 package net.hecco.biomesbf;
 
 import net.hecco.biomesbf.registry.content.BBFBlocks;
+import net.hecco.biomesbf.registry.content.BBFFeatures;
 import net.hecco.biomesbf.registry.content.BBFItemGroups;
 import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
@@ -21,5 +22,6 @@ public class BiomesBF {
     public static void init() {
         BBFBlocks.register();
         BBFItemGroups.register();
+        BBFFeatures.register();
     }
 }

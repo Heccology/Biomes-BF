@@ -1,0 +1,10 @@
+{
+  "type": "bountifulfares:spring",
+  "config": {
+    "size": {
+      "type": "minecraft:uniform",
+      "max_inclusive": 12,
+      "min_inclusive": 6
+    }
+  }
+}
