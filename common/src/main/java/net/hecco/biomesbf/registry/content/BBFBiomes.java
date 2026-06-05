@@ -34,13 +34,18 @@ public class BBFBiomes {
 
     public static void registerBiomePlacement() {
         BiomePlacement.addSubOverworld(Biomes.DESERT, BLOOMING_OASIS, CriterionBuilder.ratioMax(RatioTargets.CENTER, 0.1f));
-        SurfaceRules.RuleSource blooming_oasis = SurfaceRules.ifTrue(SurfaceRules.isBiome(BLOOMING_OASIS), SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.0), SurfaceRules.state(Blocks.DIAMOND_BLOCK.defaultBlockState()))));
+//        SurfaceRules.RuleSource blooming_oasis = SurfaceRules.ifTrue(SurfaceRules.isBiome(BLOOMING_OASIS), SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.0), SurfaceRules.state(Blocks.DIAMOND_BLOCK.defaultBlockState()))));
+//        SurfaceGeneration.addOverworldSurfaceRules(
+//                BiomesBF.id("rules/overworld"),
+//                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),
+//                        SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.sequence(blooming_oasis)))
+//        );
+        BiomePlacement.replaceOverworld(Biomes.BEACH, COCONUT_BEACH, 0.5f);
         SurfaceGeneration.addOverworldSurfaceRules(
                 BiomesBF.id("rules/overworld"),
-                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),
-                        SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.sequence(blooming_oasis)))
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BLOOMING_OASIS), SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, SurfaceRules.state(Blocks.SANDSTONE.defaultBlockState())), SurfaceRules.state(Blocks.SAND.defaultBlockState()))),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BLOOMING_OASIS), SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.state(Blocks.SANDSTONE.defaultBlockState())))
         );
-        BiomePlacement.replaceOverworld(Biomes.BEACH, COCONUT_BEACH, 0.5f);
         SurfaceGeneration.addOverworldSurfaceRules(
                 BiomesBF.id("rules/overworld"),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(COCONUT_BEACH), SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, SurfaceRules.state(Blocks.SANDSTONE.defaultBlockState())), SurfaceRules.state(Blocks.SAND.defaultBlockState()))),

@@ -26,7 +26,9 @@
     "water_fog_color": 329011
   },
   "features": [
-    [],
+    [
+      "bountifulfares:spring"
+    ],
     [
       "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"
@@ -78,14 +80,10 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:bamboo",
-      "minecraft:bamboo_vegetation",
       "minecraft:flower_warm",
-      "minecraft:patch_grass_jungle",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin",
       "minecraft:vines",
       "minecraft:patch_melon"
     ],
