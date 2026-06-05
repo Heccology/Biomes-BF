@@ -2,21 +2,22 @@ package net.hecco.biomesbf.definition.worldgen.spring;
 
 import com.mojang.serialization.Codec;
 import net.hecco.biomesbf.BiomesBF;
-import net.hecco.nexuslib.lib.util.NLMath;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderSet;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.BlockTypes;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static net.minecraft.core.Direction.*;
 
@@ -29,6 +30,7 @@ public class SpringFeature extends Feature<SpringFeatureConfig> {
     public boolean place(FeaturePlaceContext<SpringFeatureConfig> context) {
         WorldGenLevel level = context.level();
         RandomSource random = context.random();
+        SpringFeatureConfig config = context.config();
         BlockPos blockPos = context.origin();
 
         List<BlockPos> waterPoses = new ArrayList<>();
@@ -79,9 +81,10 @@ public class SpringFeature extends Feature<SpringFeatureConfig> {
 
         for (BlockPos pos : waterPoses) {
             for (int i = 1; i < 7; i++) {
-                if (level.getBlockState(pos.atY(lowestPos + i)).is(Blocks.WATER) || (i > 5 && !level.getBlockState(pos.atY(lowestPos + i)).isAir())) {
-                    return false;
-                }
+//                if (level.getBlockState(pos.atY(lowestPos + i)).is(Blocks.WATER) || !(i > 5 && !level.getBlockState(pos.atY(lowestPos + i)).canBeReplaced())) {
+//                    BiomesBF.LOGGER.info("failed at water or land check, " + level.getBlockState(pos.atY(lowestPos + i)).is(Blocks.WATER) + " + " + !level.getBlockState(pos.atY(lowestPos + i)).canBeReplaced());
+//                    return false;
+//                } TODO
             }
         }
 
@@ -123,6 +126,27 @@ public class SpringFeature extends Feature<SpringFeatureConfig> {
                     level.setBlock(pos.atY(lowestPos-1).relative(direction), prevState, 2);
                 }
             }
+        }
+
+        List<BlockPos> positions = new ArrayList<>();
+        List<BlockPos> randomPoses = new ArrayList<>();
+
+        for (int x = -14; x <= 14; x++) {
+            for (int z = -14; z <= 14; z++) {
+                if (Math.sqrt(x * x + z * z) > 14) continue;
+                positions.add(context.origin().offset(x, 1, z));
+            }
+        }
+
+        for (int i = 0; i < 30; i++) {
+            randomPoses.add(positions.get(random.nextInt(0, positions.size())));
+        }
+
+        HolderSet<PlacedFeature> features = config.vegetationFeatures;
+
+        for (BlockPos pos : randomPoses) {
+            Optional<Holder<PlacedFeature>> feature = features.getRandomElement(random);
+            feature.ifPresent(placedFeatureHolder -> placedFeatureHolder.value().place(level, context.chunkGenerator(), random, pos));
         }
 
         return true;

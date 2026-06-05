@@ -5,6 +5,9 @@
       "type": "minecraft:uniform",
       "max_inclusive": 12,
       "min_inclusive": 6
-    }
+    },
+    "vegetation_features": [
+      "bountifulfares:oasis_grass"
+    ]
   }
 }
