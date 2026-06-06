@@ -18,6 +18,8 @@ public class BBFModelProvider extends NLModelProvider {
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
         blockModelGenerators.createTrivialBlock(BBFBlocks.GOLDEN_WALNUT_LEAVES.get(), TexturedModel.LEAVES);
         blockModelGenerators.createPlant(BBFBlocks.GOLDEN_WALNUT_SAPLING.get(), BBFBlocks.POTTED_GOLDEN_WALNUT_SAPLING.get(), BlockModelGenerators.TintState.NOT_TINTED);
+
+        blockModelGenerators.createCrossBlockWithDefaultItem(BBFBlocks.SALTGRASS.get(), BlockModelGenerators.TintState.NOT_TINTED);
     }
 
     @Override

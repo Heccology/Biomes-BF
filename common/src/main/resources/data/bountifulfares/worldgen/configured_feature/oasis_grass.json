@@ -11,7 +11,7 @@
       "fallback": {
         "type": "minecraft:simple_state_provider",
         "state": {
-          "Name": "minecraft:sand"
+          "Name": "minecraft:sandstone"
         }
       },
       "rules": [
@@ -42,13 +42,21 @@
             }
           },
           "then": {
-            "type": "minecraft:simple_state_provider",
-            "state": {
-              "Name": "minecraft:grass_block",
-              "Properties": {
-                "snowy": "false"
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "weight": 15,
+                "data": {
+                  "Name": "minecraft:grass_block"
+                }
+              },
+              {
+                "weight": 4,
+                "data": {
+                  "Name": "minecraft:sand"
+                }
               }
-            }
+            ]
           }
         }
       ]

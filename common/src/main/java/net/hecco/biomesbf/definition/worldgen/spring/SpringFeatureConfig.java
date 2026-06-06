@@ -16,15 +16,21 @@ public class SpringFeatureConfig implements FeatureConfiguration {
                             IntProvider.CODEC
                                     .fieldOf("size")
                                     .forGetter((placer) -> placer.size),
-                            PlacedFeature.LIST_CODEC.fieldOf("vegetation_features").forGetter((config) -> config.vegetationFeatures)
+                            PlacedFeature.LIST_CODEC.fieldOf("floor_features").forGetter((config) -> config.floorFeatures),
+                            PlacedFeature.LIST_CODEC.fieldOf("inner_vegetation_features").forGetter((config) -> config.innerVegetationFeatures),
+                            PlacedFeature.LIST_CODEC.fieldOf("outer_vegetation_features").forGetter((config) -> config.outerVegetationFeatures)
                             ).apply(instance, SpringFeatureConfig::new)
 
     );
 
-    public final HolderSet<PlacedFeature> vegetationFeatures;
+    public final HolderSet<PlacedFeature> floorFeatures;
+    public final HolderSet<PlacedFeature> innerVegetationFeatures;
+    public final HolderSet<PlacedFeature> outerVegetationFeatures;
 
-    public SpringFeatureConfig(IntProvider size, HolderSet<PlacedFeature> vegetationFeatures) {
+    public SpringFeatureConfig(IntProvider size, HolderSet<PlacedFeature> floorFeatures, HolderSet<PlacedFeature> innerVegetationFeatures, HolderSet<PlacedFeature> outerVegetationFeatures) {
         this.size = size;
-        this.vegetationFeatures = vegetationFeatures;
+        this.floorFeatures = floorFeatures;
+        this.innerVegetationFeatures = innerVegetationFeatures;
+        this.outerVegetationFeatures = outerVegetationFeatures;
     }
 }

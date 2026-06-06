@@ -38,7 +38,7 @@ public class SpringFeature extends Feature<SpringFeatureConfig> {
         float[] noise = new float[slices];
 
         for (int i = 0; i < 25; i++) {
-            noise[i] = 10.5f + (random.nextFloat() - 0.5f) * 20.0f;
+            noise[i] = 10.5f + (random.nextFloat() - 0.5f) * 10.0f;
         }
         float[] smoothed = new float[slices];
         for (int i = 0; i < slices; i++) {
@@ -80,11 +80,14 @@ public class SpringFeature extends Feature<SpringFeatureConfig> {
         if (lowestPos == 999) return false;
 
         for (BlockPos pos : waterPoses) {
-            for (int i = 1; i < 7; i++) {
-//                if (level.getBlockState(pos.atY(lowestPos + i)).is(Blocks.WATER) || !(i > 5 && !level.getBlockState(pos.atY(lowestPos + i)).canBeReplaced())) {
-//                    BiomesBF.LOGGER.info("failed at water or land check, " + level.getBlockState(pos.atY(lowestPos + i)).is(Blocks.WATER) + " + " + !level.getBlockState(pos.atY(lowestPos + i)).canBeReplaced());
-//                    return false;
-//                } TODO
+            for (int i = 1; i < 8; i++) {
+                if (level.getBlockState(pos.atY(lowestPos + i)).is(Blocks.WATER)) {
+                    return false;
+                }
+                if (i > 3 && !level.getBlockState(pos.atY(lowestPos + i)).canBeReplaced()) {
+                    return false;
+                }
+//                TODO
             }
         }
 
@@ -95,8 +98,8 @@ public class SpringFeature extends Feature<SpringFeatureConfig> {
                     double berp = berp((i-1)/10f, 3, 5, 7);
                     for (double x = -berp; x <= berp; x++) {
                         for (double z = -berp; z <= berp; z++) {
-                            if (Math.sqrt(x * x + z * z) > berp) continue;
                             BlockPos offset = pos.atY(lowestPos + i).offset((int) x, 0, (int) z);
+                            if (Math.sqrt(x * x + z * z) > berp || level.getBlockState(offset).isAir()) continue;
                             BlockState offsetState = level.getBlockState(offset);
                             if (!offsetState.is(BlockTags.FEATURES_CANNOT_REPLACE)) {
                                 boolean waterSupporter = false;
@@ -120,32 +123,98 @@ public class SpringFeature extends Feature<SpringFeatureConfig> {
         for (BlockPos pos : waterPoses) {
             for (Direction direction : List.of(NORTH, EAST, SOUTH, WEST, DOWN)) {
                 if (!level.getBlockState(pos.atY(lowestPos).relative(direction)).is(BlockTags.FEATURES_CANNOT_REPLACE) && !level.getBlockState(pos.atY(lowestPos).relative(direction)).is(Blocks.WATER)) {
-                    level.setBlock(pos.atY(lowestPos).relative(direction), prevState, 2);
+                    level.setBlock(pos.atY(lowestPos).relative(direction), Blocks.SANDSTONE.defaultBlockState(), 2);
                 }
                 if (!level.getBlockState(pos.atY(lowestPos-1).relative(direction)).is(BlockTags.FEATURES_CANNOT_REPLACE) && !level.getBlockState(pos.atY(lowestPos-1).relative(direction)).is(Blocks.WATER)) {
-                    level.setBlock(pos.atY(lowestPos-1).relative(direction), prevState, 2);
+                    level.setBlock(pos.atY(lowestPos-1).relative(direction), Blocks.SANDSTONE.defaultBlockState(), 2);
                 }
             }
         }
 
-        List<BlockPos> positions = new ArrayList<>();
-        List<BlockPos> randomPoses = new ArrayList<>();
 
-        for (int x = -14; x <= 14; x++) {
-            for (int z = -14; z <= 14; z++) {
-                if (Math.sqrt(x * x + z * z) > 14) continue;
-                positions.add(context.origin().offset(x, 1, z));
+        List<BlockPos> floorpositions = new ArrayList<>();
+        List<BlockPos> floorrandomPoses = new ArrayList<>();
+
+        int floorRadius = 6;
+        for (int x = -floorRadius; x <= floorRadius; x++) {
+            for (int z = -floorRadius; z <= floorRadius; z++) {
+                if (Math.sqrt(x * x + z * z) > floorRadius) continue;
+                int xOffset = random.nextIntBetweenInclusive(-floorRadius, floorRadius);
+                int zOffset = random.nextIntBetweenInclusive(-floorRadius, floorRadius);
+                floorpositions.add(blockPos.offset(x - floorRadius + xOffset, 1, z - floorRadius + zOffset));
             }
         }
 
-        for (int i = 0; i < 30; i++) {
-            randomPoses.add(positions.get(random.nextInt(0, positions.size())));
+        for (int i = 0; i < 60; i++) {
+            floorrandomPoses.add(floorpositions.get(random.nextInt(0, floorpositions.size())));
         }
 
-        HolderSet<PlacedFeature> features = config.vegetationFeatures;
+        HolderSet<PlacedFeature> floorFeatures = config.floorFeatures;
 
-        for (BlockPos pos : randomPoses) {
-            Optional<Holder<PlacedFeature>> feature = features.getRandomElement(random);
+        for (BlockPos pos : floorrandomPoses) {
+            Optional<Holder<PlacedFeature>> feature = floorFeatures.getRandomElement(random);
+            feature.ifPresent(placedFeatureHolder -> placedFeatureHolder.value().place(level, context.chunkGenerator(), random, pos));
+        }
+
+
+
+
+        List<BlockPos> innerpositions = new ArrayList<>();
+        List<BlockPos> innerrandomPoses = new ArrayList<>();
+
+        int innerRadius = 7;
+        for (int x = -innerRadius; x <= innerRadius; x++) {
+            for (int z = -innerRadius; z <= innerRadius; z++) {
+                int xOffset = random.nextIntBetweenInclusive(-innerRadius, innerRadius);
+                int zOffset = random.nextIntBetweenInclusive(-innerRadius, innerRadius);
+                int offsetX = x - innerRadius + xOffset;
+                int offsetZ = z - innerRadius + zOffset;
+                if (Math.sqrt(x * x + z * z) > innerRadius) continue;
+                innerpositions.add(blockPos.offset(offsetX, 1, offsetZ));
+            }
+        }
+
+        if (!innerpositions.isEmpty()) {
+            for (int i = 0; i < 40; i++) {
+                innerrandomPoses.add(innerpositions.get(random.nextInt(0, innerpositions.size())));
+            }
+        }
+
+        HolderSet<PlacedFeature> innerFeatures = config.innerVegetationFeatures;
+
+        for (BlockPos pos : innerrandomPoses) {
+            Optional<Holder<PlacedFeature>> feature = innerFeatures.getRandomElement(random);
+            feature.ifPresent(placedFeatureHolder -> placedFeatureHolder.value().place(level, context.chunkGenerator(), random, pos));
+        }
+
+
+
+
+        List<BlockPos> outerpositions = new ArrayList<>();
+        List<BlockPos> outerrandomPoses = new ArrayList<>();
+
+        int outerRadius = 13;
+        for (int x = -outerRadius; x <= outerRadius; x++) {
+            for (int z = -outerRadius; z <= outerRadius; z++) {
+                int xOffset = random.nextIntBetweenInclusive(-innerRadius, innerRadius);
+                int zOffset = random.nextIntBetweenInclusive(-innerRadius, innerRadius);
+                int offsetX = x - innerRadius + xOffset;
+                int offsetZ = z - innerRadius + zOffset;
+                if (Math.sqrt(x * x + z * z) > outerRadius) continue;
+                if (Math.sqrt(x * x + z * z) < outerRadius - 2) continue;
+                outerpositions.add(blockPos.offset(offsetX, 1, offsetZ));
+            }
+        }
+        if (!outerpositions.isEmpty()) {
+            for (int i = 0; i < 30; i++) {
+                outerrandomPoses.add(outerpositions.get(random.nextInt(0, outerpositions.size())));
+            }
+        }
+
+        HolderSet<PlacedFeature> outerFeatures = config.outerVegetationFeatures;
+
+        for (BlockPos pos : outerrandomPoses) {
+            Optional<Holder<PlacedFeature>> feature = outerFeatures.getRandomElement(random);
             feature.ifPresent(placedFeatureHolder -> placedFeatureHolder.value().place(level, context.chunkGenerator(), random, pos));
         }
 

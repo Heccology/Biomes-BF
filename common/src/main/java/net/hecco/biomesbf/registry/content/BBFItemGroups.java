@@ -18,6 +18,7 @@ public class BBFItemGroups {
                     .displayItems((displayParameters, entries) -> {
                         entries.accept(BBFBlocks.GOLDEN_WALNUT_LEAVES.get());
                         entries.accept(BBFBlocks.GOLDEN_WALNUT_SAPLING.get());
+                        entries.accept(BBFBlocks.SALTGRASS.get());
                     }).build());
 
     public static void register() {

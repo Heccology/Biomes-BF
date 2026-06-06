@@ -8,5 +8,6 @@ public class BiomesBFClient {
     public static void onInitializeClient() {
         NLServices.client().setBlockRenderType(BBFBlocks.GOLDEN_WALNUT_SAPLING.get(), RenderType.cutout());
         NLServices.client().setBlockRenderType(BBFBlocks.POTTED_GOLDEN_WALNUT_SAPLING.get(), RenderType.cutout());
+        NLServices.client().setBlockRenderType(BBFBlocks.SALTGRASS.get(), RenderType.cutout());
     }
 }

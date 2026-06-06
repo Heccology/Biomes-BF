@@ -1,6 +1,7 @@
 package net.hecco.biomesbf.registry.content;
 
 import net.hecco.biomesbf.BiomesBF;
+import net.hecco.biomesbf.definition.block.SaltgrassBlock;
 import net.hecco.bountifulfares.definition.block.custom.FruitLeavesBlock;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.registry.misc.BFConfiguredFeatures;
@@ -37,6 +38,8 @@ public class BBFBlocks {
     public static final Supplier<Block> GOLDEN_WALNUT_LEAVES = registerBlock("golden_walnut_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().ignitedByLava().pushReaction(PushReaction.DESTROY)));
     public static final Supplier<Block> GOLDEN_WALNUT_SAPLING = registerBlock("golden_walnut_sapling", () -> new PublicSaplingBlock(GOLDEN_WALNUT_SAPLING_GENERATOR, BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).randomTicks().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final Supplier<Block> POTTED_GOLDEN_WALNUT_SAPLING = registerBlockNoItem("potted_golden_walnut_sapling", () -> new FlowerPotBlock(GOLDEN_WALNUT_SAPLING.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY)));
+
+    public static final Supplier<Block> SALTGRASS = registerBlock("saltgrass", () -> new SaltgrassBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_GREEN).replaceable().noCollission().instabreak().sound(SoundType.SWEET_BERRY_BUSH).offsetType(BlockBehaviour.OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
 
 
 

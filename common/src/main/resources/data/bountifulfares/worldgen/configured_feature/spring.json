@@ -6,8 +6,47 @@
       "max_inclusive": 12,
       "min_inclusive": 6
     },
-    "vegetation_features": [
-      "bountifulfares:oasis_grass"
+    "floor_features": [
+      "bountifulfares:oasis_grass",
+      "bountifulfares:oasis_grass",
+      "bountifulfares:oasis_grass",
+      "bountifulfares:oasis_grass",
+      "bountifulfares:oasis_grass",
+      "bountifulfares:oasis_grass",
+      "bountifulfares:oasis_grass",
+      "bountifulfares:oasis_grass",
+      "bountifulfares:oasis_grass",
+      "bountifulfares:oasis_grass",
+      "bountifulfares:oasis_grass",
+      "bountifulfares:oasis_grass",
+      "bountifulfares:oasis_grass",
+      "bountifulfares:oasis_grass",
+      "bountifulfares:seagrass_oasis"
+    ],
+    "inner_vegetation_features": [
+      "bountifulfares:patch_sugar_cane_oasis",
+      "bountifulfares:patch_sugar_cane_oasis",
+      "bountifulfares:patch_sugar_cane_oasis",
+      "bountifulfares:patch_sugar_cane_oasis",
+      "bountifulfares:patch_grass_oasis",
+      "bountifulfares:oasis_palm",
+      "bountifulfares:oasis_palm",
+      "bountifulfares:oasis_palm",
+      "bountifulfares:oasis_palm",
+      "bountifulfares:oasis_passion_fruit",
+      "bountifulfares:small_oasis_palm",
+      "bountifulfares:orange_bush"
+    ],
+    "outer_vegetation_features": [
+      "bountifulfares:patch_grass_oasis",
+      "bountifulfares:oasis_passion_fruit",
+      "bountifulfares:small_oasis_palm",
+      "bountifulfares:orange_bush",
+      "bountifulfares:patch_saltgrass_oasis",
+      "bountifulfares:patch_saltgrass_oasis",
+      "bountifulfares:patch_saltgrass_oasis",
+      "bountifulfares:patch_saltgrass_oasis",
+      "bountifulfares:patch_saltgrass_oasis"
     ]
   }
 }

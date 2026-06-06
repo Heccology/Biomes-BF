@@ -1,0 +1,10 @@
+{
+  "type": "bountifulfares:wild_vine",
+  "config": {
+    "block": {
+      "Name": "bountifulfares:wild_passion_fruit_vine"
+    },
+    "can_place_on": "#bountifulfares:oasis_passion_fruit_grows_on",
+    "patch_size": 5
+  }
+}

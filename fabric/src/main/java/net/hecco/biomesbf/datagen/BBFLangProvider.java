@@ -44,6 +44,7 @@ public class BBFLangProvider extends NLLanguageProvider {
         generate(translationBuilder, BBFBlocks.GOLDEN_WALNUT_LEAVES.get(), "Golden Walnut Leaves");
         generate(translationBuilder, BBFBlocks.GOLDEN_WALNUT_SAPLING.get(), "Golden Walnut Sapling");
         generate(translationBuilder, BBFBlocks.POTTED_GOLDEN_WALNUT_SAPLING.get(), "Golden Walnut Sapling");
+        generate(translationBuilder, BBFBlocks.SALTGRASS.get(), "Saltgrass");
     }
 
     public static Set<ResourceLocation> getBlockIdsInList(ArrayList<Supplier<Block>> list) {
