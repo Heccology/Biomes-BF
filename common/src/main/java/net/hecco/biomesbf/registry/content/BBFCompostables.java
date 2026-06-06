@@ -12,6 +12,8 @@ public class BBFCompostables {
         Object2FloatMap<ItemLike> compostables = new Object2FloatOpenHashMap<>();
         compostables.put(BBFBlocks.GOLDEN_WALNUT_LEAVES.get().asItem(), 0.65f);
         compostables.put(BBFBlocks.GOLDEN_WALNUT_SAPLING.get().asItem(), 0.85f);
+        compostables.put(BBFBlocks.SALTGRASS.get().asItem(), 0.3f);
+        compostables.put(BBFBlocks.DRY_SALTGRASS.get().asItem(), 0.2f);
         COMPOSTABLES.putAll(compostables);
         return compostables;
     }

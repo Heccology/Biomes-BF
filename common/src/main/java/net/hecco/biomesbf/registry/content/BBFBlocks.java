@@ -40,6 +40,7 @@ public class BBFBlocks {
     public static final Supplier<Block> POTTED_GOLDEN_WALNUT_SAPLING = registerBlockNoItem("potted_golden_walnut_sapling", () -> new FlowerPotBlock(GOLDEN_WALNUT_SAPLING.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY)));
 
     public static final Supplier<Block> SALTGRASS = registerBlock("saltgrass", () -> new SaltgrassBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_GREEN).replaceable().noCollission().instabreak().sound(SoundType.SWEET_BERRY_BUSH).offsetType(BlockBehaviour.OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+    public static final Supplier<Block> DRY_SALTGRASS = registerBlock("dry_saltgrass", () -> new SaltgrassBlock(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).replaceable().noCollission().instabreak().sound(SoundType.SWEET_BERRY_BUSH).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
 
 
 

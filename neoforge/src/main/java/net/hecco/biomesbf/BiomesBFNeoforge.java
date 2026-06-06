@@ -1,6 +1,7 @@
 package net.hecco.biomesbf;
 
 import net.hecco.biomesbf.config.BBFNeoforgeConfigValues;
+import net.hecco.biomesbf.registry.BBFBiomeModifiers;
 import net.hecco.biomesbf.registry.content.BBFBiomes;
 import net.hecco.biomesbf.registry.misc.BBFConfiguration;
 import net.neoforged.bus.api.IEventBus;
@@ -24,6 +25,8 @@ public class BiomesBFNeoforge {
 
         eventBus.addListener(this::clientSetup);
         eventBus.addListener(this::onCommonSetup);
+
+        BBFBiomeModifiers.BIOME_MODIFIERS.register(eventBus);
     }
 
 

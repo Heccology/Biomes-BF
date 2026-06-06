@@ -31,6 +31,7 @@ public class BBFLangProvider extends NLLanguageProvider {
         generate(translationBuilder, "biomesbf.configuration.title", "Biomes of Bountiful Fares Configuration");
         generate(translationBuilder, "biomesbf.configuration.common", "Gameplay");
 
+
         generate(translationBuilder, "biomesbf.configuration.generate_blooming_oasis", "Blooming Oases generate");
         generate(translationBuilder, "biomesbf.configuration.generate_walnut_forest", "Walnut Forests generate");
         generate(translationBuilder, "biomesbf.configuration.generate_golden_savanna", "Golden Savannas generate");
@@ -38,13 +39,18 @@ public class BBFLangProvider extends NLLanguageProvider {
         generate(translationBuilder, "biomesbf.configuration.generate_blooming_forest", "Blooming Forests generate");
         generate(translationBuilder, "biomesbf.configuration.generate_blooming_grove", "Blooming Groves generate");
         generate(translationBuilder, "biomesbf.configuration.generate_blooming_river", "Blooming Rivers generate");
+        generate(translationBuilder, "biomesbf.configuration.generate_beach_saltgrass", "Saltgrass generates on beaches");
 
         generate(translationBuilder, "itemgroup.biomesbf", "Biomes of Bountiful Fares");
+
+        generate(translationBuilder, "biome.bountifulfares.walnut_forest", "Walnut Forest");
+        generate(translationBuilder, "biome.bountifulfares.blooming_oasis", "Blooming Oasis");
 
         generate(translationBuilder, BBFBlocks.GOLDEN_WALNUT_LEAVES.get(), "Golden Walnut Leaves");
         generate(translationBuilder, BBFBlocks.GOLDEN_WALNUT_SAPLING.get(), "Golden Walnut Sapling");
         generate(translationBuilder, BBFBlocks.POTTED_GOLDEN_WALNUT_SAPLING.get(), "Golden Walnut Sapling");
         generate(translationBuilder, BBFBlocks.SALTGRASS.get(), "Saltgrass");
+        generate(translationBuilder, BBFBlocks.DRY_SALTGRASS.get(), "Dry Saltgrass");
     }
 
     public static Set<ResourceLocation> getBlockIdsInList(ArrayList<Supplier<Block>> list) {

@@ -1,0 +1,11 @@
+{
+  "type": "biomesbf:add_features_by_config",
+  "biomes": [
+    "minecraft:beach"
+  ],
+  "config_value": "generateBeachSaltgrass",
+  "features": [
+    "bountifulfares:beach_saltgrass"
+  ],
+  "step": "vegetal_decoration"
+}

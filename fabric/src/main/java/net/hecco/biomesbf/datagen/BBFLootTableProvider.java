@@ -32,6 +32,10 @@ public class BBFLootTableProvider extends NLBlockLootTableProvider {
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
                         .when(this.hasCShearsOrSilkTouch())
                         .add(this.applyExplosionDecay(BBFBlocks.SALTGRASS.get(), LootItem.lootTableItem(BBFBlocks.SALTGRASS.get())))));
+        add(BBFBlocks.DRY_SALTGRASS.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .when(this.hasCShearsOrSilkTouch())
+                        .add(this.applyExplosionDecay(BBFBlocks.DRY_SALTGRASS.get(), LootItem.lootTableItem(BBFBlocks.DRY_SALTGRASS.get())))));
     }
 
     public static LootItemCondition.Builder hasCShears() {

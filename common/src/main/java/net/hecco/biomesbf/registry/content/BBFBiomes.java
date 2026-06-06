@@ -22,7 +22,6 @@ public class BBFBiomes {
     public static final ResourceKey<Biome> BLOOMING_OASIS = ResourceKey.create(Registries.BIOME, BiomesBF.id("blooming_oasis"));
     public static final ResourceKey<Biome> GOLDEN_SAVANNA = ResourceKey.create(Registries.BIOME, BiomesBF.id("golden_savanna"));
     public static final ResourceKey<Biome> WALNUT_FOREST = ResourceKey.create(Registries.BIOME, BiomesBF.id("walnut_forest"));
-    public static final ResourceKey<Biome> COCONUT_BEACH = ResourceKey.create(Registries.BIOME, BiomesBF.id("coconut_beach"));
     public static final ResourceKey<Biome> BLOOMING_FOREST = ResourceKey.create(Registries.BIOME, BiomesBF.id("blooming_forest"));
     public static final ResourceKey<Biome> BLOOMING_GROVE = ResourceKey.create(Registries.BIOME, BiomesBF.id("blooming_grove"));
     public static final ResourceKey<Biome> BLOOMING_RIVER = ResourceKey.create(Registries.BIOME, BiomesBF.id("blooming_river"));
@@ -33,23 +32,18 @@ public class BBFBiomes {
     }
 
     public static void registerBiomePlacement() {
-        BiomePlacement.addSubOverworld(Biomes.DESERT, BLOOMING_OASIS, CriterionBuilder.ratioMax(RatioTargets.CENTER, 0.1f));
+//        BiomePlacement.addSubOverworld(Biomes.DESERT, BLOOMING_OASIS, CriterionBuilder.ratioMax(RatioTargets.CENTER, 0.1f)); old, use for good oasis seed
+        BiomePlacement.addSubOverworld(Biomes.DESERT, BLOOMING_OASIS, CriterionBuilder.ratioMax(RatioTargets.CENTER, 0.115f));
 //        SurfaceRules.RuleSource blooming_oasis = SurfaceRules.ifTrue(SurfaceRules.isBiome(BLOOMING_OASIS), SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.0), SurfaceRules.state(Blocks.DIAMOND_BLOCK.defaultBlockState()))));
 //        SurfaceGeneration.addOverworldSurfaceRules(
 //                BiomesBF.id("rules/overworld"),
 //                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),
 //                        SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.sequence(blooming_oasis)))
 //        );
-        BiomePlacement.replaceOverworld(Biomes.BEACH, COCONUT_BEACH, 0.5f);
         SurfaceGeneration.addOverworldSurfaceRules(
                 BiomesBF.id("rules/overworld"),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BLOOMING_OASIS), SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, SurfaceRules.state(Blocks.SANDSTONE.defaultBlockState())), SurfaceRules.state(Blocks.SAND.defaultBlockState()))),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BLOOMING_OASIS), SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.state(Blocks.SANDSTONE.defaultBlockState())))
-        );
-        SurfaceGeneration.addOverworldSurfaceRules(
-                BiomesBF.id("rules/overworld"),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(COCONUT_BEACH), SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, SurfaceRules.state(Blocks.SANDSTONE.defaultBlockState())), SurfaceRules.state(Blocks.SAND.defaultBlockState()))),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(COCONUT_BEACH), SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.state(Blocks.SANDSTONE.defaultBlockState())))
         );
         BiomePlacement.addOverworld(WALNUT_FOREST, new Climate.ParameterPoint(
                 Climate.Parameter.span(0.1F, 0.7F),        // temperature

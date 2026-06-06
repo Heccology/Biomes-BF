@@ -2,6 +2,7 @@ package net.hecco.biomesbf;
 
 import net.fabricmc.api.ModInitializer;
 import net.hecco.biomesbf.config.BBFFabricConfigValues;
+import net.hecco.biomesbf.registry.BBFFoliageGeneration;
 import net.hecco.biomesbf.registry.content.BBFBiomes;
 import net.hecco.biomesbf.registry.content.BBFCompostables;
 import net.hecco.biomesbf.registry.misc.BBFConfiguration;
@@ -17,5 +18,6 @@ public class BiomesBFFabric implements ModInitializer {
         BiomesBF.init();
         BBFBiomes.registerBiomePlacement();
         BBFCompostables.registerModCompostables();
+        BBFFoliageGeneration.generate();
     }
 }

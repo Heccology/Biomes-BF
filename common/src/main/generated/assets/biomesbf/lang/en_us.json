@@ -1,5 +1,8 @@
 {
+  "biome.bountifulfares.blooming_oasis": "Blooming Oasis",
+  "biome.bountifulfares.walnut_forest": "Walnut Forest",
   "biomesbf.configuration.common": "Gameplay",
+  "biomesbf.configuration.generate_beach_saltgrass": "Saltgrass generates on beaches",
   "biomesbf.configuration.generate_blooming_forest": "Blooming Forests generate",
   "biomesbf.configuration.generate_blooming_grove": "Blooming Groves generate",
   "biomesbf.configuration.generate_blooming_oasis": "Blooming Oases generate",
@@ -9,6 +12,7 @@
   "biomesbf.configuration.generate_walnut_forest": "Walnut Forests generate",
   "biomesbf.configuration.restart_warning": "Requires a game restart to apply changes",
   "biomesbf.configuration.title": "Biomes of Bountiful Fares Configuration",
+  "block.bountifulfares.dry_saltgrass": "Dry Saltgrass",
   "block.bountifulfares.golden_walnut_leaves": "Golden Walnut Leaves",
   "block.bountifulfares.golden_walnut_sapling": "Golden Walnut Sapling",
   "block.bountifulfares.potted_golden_walnut_sapling": "Golden Walnut Sapling",

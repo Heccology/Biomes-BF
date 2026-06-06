@@ -25,7 +25,10 @@ public class BBFBlockTagProvider extends NLBlockTagProvider {
 
         this.getOrCreateTagBuilder(BlockTags.FLOWER_POTS).add(BBFBlocks.POTTED_GOLDEN_WALNUT_SAPLING.get());
 
-        this.getOrCreateTagBuilder(BlockTags.REPLACEABLE).add(BBFBlocks.SALTGRASS.get());
+        this.getOrCreateTagBuilder(BlockTags.REPLACEABLE).add(
+                BBFBlocks.SALTGRASS.get(),
+                BBFBlocks.DRY_SALTGRASS.get()
+        );
 
         for(Supplier<Block> block : BBFBlocks.PICKAXE_MINEABLE) {
             this.getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE).add(block.get());

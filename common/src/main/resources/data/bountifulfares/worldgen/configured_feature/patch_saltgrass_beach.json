@@ -12,7 +12,7 @@
                 "data": {
                   "Name": "bountifulfares:saltgrass"
                 },
-                "weight": 3
+                "weight": 1
               },
               {
                 "data": {
@@ -39,8 +39,8 @@
         }
       ]
     },
-    "tries": 8,
-    "xz_spread": 3,
+    "tries": 12,
+    "xz_spread": 2,
     "y_spread": 3
   }
 }
