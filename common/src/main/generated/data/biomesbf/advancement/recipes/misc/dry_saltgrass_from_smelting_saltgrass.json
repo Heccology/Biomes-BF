@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_saltgrass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bountifulfares:saltgrass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "biomesbf:dry_saltgrass_from_smelting_saltgrass"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_saltgrass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "biomesbf:dry_saltgrass_from_smelting_saltgrass"
+    ]
+  }
+}

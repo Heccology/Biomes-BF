@@ -37,8 +37,9 @@ public class BBFLangProvider extends NLLanguageProvider {
         generate(translationBuilder, "biomesbf.configuration.generate_golden_savanna", "Golden Savannas generate");
         generate(translationBuilder, "biomesbf.configuration.generate_coconut_beach", "Coconut Beaches generate");
         generate(translationBuilder, "biomesbf.configuration.generate_blooming_forest", "Blooming Forests generate");
-        generate(translationBuilder, "biomesbf.configuration.generate_blooming_grove", "Blooming Groves generate");
         generate(translationBuilder, "biomesbf.configuration.generate_blooming_river", "Blooming Rivers generate");
+        generate(translationBuilder, "biomesbf.configuration.generate_blooming_grove", "Blooming Groves generate");
+
         generate(translationBuilder, "biomesbf.configuration.generate_beach_saltgrass", "Saltgrass generates on beaches");
 
         generate(translationBuilder, "itemgroup.biomesbf", "Biomes of Bountiful Fares");

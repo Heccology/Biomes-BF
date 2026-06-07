@@ -47,8 +47,10 @@ public class SpringFeature extends Feature<SpringFeatureConfig> {
             smoothed[i] = (noise[prev] + noise[i] + noise[next]) / 3.0f;
         }
 
-        for (int x = -14; x <= 14; x++) {
-            for (int z = -14; z <= 14; z++) {
+        int radius = 12;
+
+        for (int x = -radius; x <= radius; x++) {
+            for (int z = -radius; z <= radius; z++) {
                 float dist = (float) Math.sqrt((x * x) + (z * z));
                 if (dist < 0.5f) {
                     waterPoses.add(blockPos.offset(x, 0, z));
@@ -61,7 +63,6 @@ public class SpringFeature extends Feature<SpringFeatureConfig> {
         }
 
         int lowestPos = 999;
-        BlockState prevState = Blocks.AIR.defaultBlockState();
 
         for (BlockPos pos : waterPoses.stream().toList()) {
             for (int i = 0; i < 8; i++) {
@@ -70,7 +71,6 @@ public class SpringFeature extends Feature<SpringFeatureConfig> {
                 if (state.isSolidRender(level, movedPos)) {
                     if (movedPos.getY() < lowestPos && movedPos.getY() > 63) {
                         lowestPos = movedPos.getY();
-                        prevState = level.getBlockState(movedPos);
                     }
                     break;
                 }
@@ -87,13 +87,12 @@ public class SpringFeature extends Feature<SpringFeatureConfig> {
                 if (i > 3 && !level.getBlockState(pos.atY(lowestPos + i)).canBeReplaced()) {
                     return false;
                 }
-//                TODO
             }
         }
 
         for (BlockPos pos : waterPoses.stream().toList()) {
             if (level.getBlockState(pos.atY(lowestPos)).isSolidRender(level, pos.atY(lowestPos))) {
-                level.setBlock(pos.atY(lowestPos), Blocks.WATER.defaultBlockState(), 2);
+                setBlock(level, pos.atY(lowestPos), Blocks.WATER.defaultBlockState());
                 for (int i = 1; i < 10; i++) {
                     double berp = berp((i-1)/10f, 3, 5, 7);
                     for (double x = -berp; x <= berp; x++) {
@@ -110,7 +109,7 @@ public class SpringFeature extends Feature<SpringFeatureConfig> {
                                     }
                                 }
                                 if (!waterSupporter) {
-                                    level.removeBlock(offset, false);
+                                    removeBlock(level, offset);
                                 }
                             }
                         }
@@ -123,10 +122,10 @@ public class SpringFeature extends Feature<SpringFeatureConfig> {
         for (BlockPos pos : waterPoses) {
             for (Direction direction : List.of(NORTH, EAST, SOUTH, WEST, DOWN)) {
                 if (!level.getBlockState(pos.atY(lowestPos).relative(direction)).is(BlockTags.FEATURES_CANNOT_REPLACE) && !level.getBlockState(pos.atY(lowestPos).relative(direction)).is(Blocks.WATER)) {
-                    level.setBlock(pos.atY(lowestPos).relative(direction), Blocks.SANDSTONE.defaultBlockState(), 2);
+                    setBlock(level, pos.atY(lowestPos).relative(direction), Blocks.SANDSTONE.defaultBlockState());
                 }
                 if (!level.getBlockState(pos.atY(lowestPos-1).relative(direction)).is(BlockTags.FEATURES_CANNOT_REPLACE) && !level.getBlockState(pos.atY(lowestPos-1).relative(direction)).is(Blocks.WATER)) {
-                    level.setBlock(pos.atY(lowestPos-1).relative(direction), Blocks.SANDSTONE.defaultBlockState(), 2);
+                    setBlock(level, pos.atY(lowestPos-1).relative(direction), Blocks.SANDSTONE.defaultBlockState());
                 }
             }
         }
@@ -135,13 +134,13 @@ public class SpringFeature extends Feature<SpringFeatureConfig> {
         List<BlockPos> floorpositions = new ArrayList<>();
         List<BlockPos> floorrandomPoses = new ArrayList<>();
 
-        int floorRadius = 6;
+        int floorRadius = 3;
         for (int x = -floorRadius; x <= floorRadius; x++) {
             for (int z = -floorRadius; z <= floorRadius; z++) {
                 if (Math.sqrt(x * x + z * z) > floorRadius) continue;
                 int xOffset = random.nextIntBetweenInclusive(-floorRadius, floorRadius);
                 int zOffset = random.nextIntBetweenInclusive(-floorRadius, floorRadius);
-                floorpositions.add(blockPos.offset(x - floorRadius + xOffset, 1, z - floorRadius + zOffset));
+                floorpositions.add(blockPos.offset(x - (radius/2) + xOffset, 1, z - (radius/2) + zOffset));
             }
         }
 
@@ -162,7 +161,7 @@ public class SpringFeature extends Feature<SpringFeatureConfig> {
         List<BlockPos> innerpositions = new ArrayList<>();
         List<BlockPos> innerrandomPoses = new ArrayList<>();
 
-        int innerRadius = 7;
+        int innerRadius = 4;
         for (int x = -innerRadius; x <= innerRadius; x++) {
             for (int z = -innerRadius; z <= innerRadius; z++) {
                 int xOffset = random.nextIntBetweenInclusive(-innerRadius, innerRadius);
@@ -193,7 +192,7 @@ public class SpringFeature extends Feature<SpringFeatureConfig> {
         List<BlockPos> outerpositions = new ArrayList<>();
         List<BlockPos> outerrandomPoses = new ArrayList<>();
 
-        int outerRadius = 13;
+        int outerRadius = 10;
         for (int x = -outerRadius; x <= outerRadius; x++) {
             for (int z = -outerRadius; z <= outerRadius; z++) {
                 int xOffset = random.nextIntBetweenInclusive(-innerRadius, innerRadius);
@@ -223,5 +222,15 @@ public class SpringFeature extends Feature<SpringFeatureConfig> {
 
     public static double berp(float delta, float start, float end, float easing) {
         return (end * Math.pow(Math.sin(Math.PI*delta), Math.max(easing / 10, 0))) + start;
+    }
+
+    private static void setBlock(WorldGenLevel level, BlockPos pos, BlockState state) {
+        if (!level.ensureCanWrite(pos)) return;
+        level.setBlock(pos, state, 2);
+    }
+
+    private static void removeBlock(WorldGenLevel level, BlockPos pos) {
+        if (!level.ensureCanWrite(pos)) return;
+        level.removeBlock(pos, false);
     }
 }

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "group": "dry_saltgrass",
+  "ingredient": {
+    "item": "bountifulfares:saltgrass"
+  },
+  "result": {
+    "id": "bountifulfares:dry_saltgrass"
+  }
+}
