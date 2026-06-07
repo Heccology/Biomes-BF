@@ -101,6 +101,7 @@ processResources {
             'nexuslib_version'    : nexuslib_version,
             'nexuslib_version_range'    : nexuslib_version_range,
             'bf_version'    : bf_version,
+            'biolith_version'    : biolith_version,
             'fabric_biolith_cursemaven'    : fabric_biolith_cursemaven,
             'neoforge_biolith_cursemaven'  : neoforge_biolith_cursemaven,
             'fabric_bf_cursemaven'    : fabric_bf_cursemaven,

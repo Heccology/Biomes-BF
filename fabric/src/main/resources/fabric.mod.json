@@ -39,7 +39,8 @@
         "minecraft": "${minecraft_version}",
         "java": ">=${java_version}",
         "nexuslib": ">=${nexuslib_version}",
-        "bountifulfares": ">=${bf_version}"
+        "bountifulfares": ">=${bf_version}",
+        "biolith": ">=${biolith_version}"
     },
     "suggests": {
         "another-mod": "*"
