@@ -43,4 +43,4 @@ You can either report it on the mod's [GitHub page](https://github.com/Heccology
 [![Twitter / X logo](https://cdn.modrinth.com/data/cached_images/a5b793cfc096e5677e0828de3aad077c729c8bc1.png)](https://x.com/Hecco)
 [![Kofi logo](https://cdn.modrinth.com/data/cached_images/aa2ff27fa029d3462e365929eef8f4f9e1f69405.png)](https://ko-fi.com/hecco)
 ##
-You can report bugs on [GitHub](https://github.com/Heccology/Bountiful-Fares/issues) or in my [Discord Server](https://discord.gg/yrDsSeNkWu).
+You can report bugs on [GitHub](https://github.com/Heccology/Biomes-BF/issues) or in my [Discord Server](https://discord.gg/yrDsSeNkWu).
