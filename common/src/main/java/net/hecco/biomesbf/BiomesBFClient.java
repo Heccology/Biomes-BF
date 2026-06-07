@@ -10,5 +10,6 @@ public class BiomesBFClient {
         NLServices.client().setBlockRenderType(BBFBlocks.POTTED_GOLDEN_WALNUT_SAPLING.get(), RenderType.cutout());
         NLServices.client().setBlockRenderType(BBFBlocks.SALTGRASS.get(), RenderType.cutout());
         NLServices.client().setBlockRenderType(BBFBlocks.DRY_SALTGRASS.get(), RenderType.cutout());
+        NLServices.client().setBlockRenderType(BBFBlocks.PURPLE_POSIES.get(), RenderType.cutout());
     }
 }

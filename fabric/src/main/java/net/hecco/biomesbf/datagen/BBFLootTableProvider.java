@@ -8,6 +8,7 @@ import net.hecco.nexuslib.datagen.NLBlockLootTableProvider;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -26,6 +27,7 @@ public class BBFLootTableProvider extends NLBlockLootTableProvider {
     @Override
     public void generate() {
         add(BBFBlocks.GOLDEN_WALNUT_LEAVES.get(), createLeavesDrops(BBFBlocks.GOLDEN_WALNUT_LEAVES.get(), BBFBlocks.GOLDEN_WALNUT_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(BBFBlocks.FLOWERING_SPRUCE_LEAVES.get(), createLeavesDrops(BBFBlocks.FLOWERING_SPRUCE_LEAVES.get(), Blocks.SPRUCE_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES));
         dropSelf(BBFBlocks.GOLDEN_WALNUT_SAPLING.get());
         add(BBFBlocks.POTTED_GOLDEN_WALNUT_SAPLING.get(), createPotFlowerItemTable(BBFBlocks.GOLDEN_WALNUT_SAPLING.get()));
         add(BBFBlocks.SALTGRASS.get(), LootTable.lootTable()

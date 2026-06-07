@@ -3,6 +3,7 @@ package net.hecco.biomesbf;
 import net.hecco.biomesbf.registry.content.BBFBlocks;
 import net.hecco.biomesbf.registry.content.BBFFeatures;
 import net.hecco.biomesbf.registry.content.BBFItemGroups;
+import net.hecco.biomesbf.registry.content.BBFParticles;
 import net.hecco.biomesbf.registry.misc.BBFTrunkPlacerTypes;
 import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
@@ -22,6 +23,7 @@ public class BiomesBF {
 
     public static void init() {
         BBFBlocks.register();
+        BBFParticles.register();
         BBFItemGroups.register();
         BBFFeatures.register();
         BBFTrunkPlacerTypes.register();

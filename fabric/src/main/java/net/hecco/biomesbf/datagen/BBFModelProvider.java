@@ -3,7 +3,6 @@ package net.hecco.biomesbf.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.hecco.biomesbf.BiomesBF;
 import net.hecco.biomesbf.registry.content.BBFBlocks;
-import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.nexuslib.datagen.NLModelProvider;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.ItemModelGenerators;
@@ -21,6 +20,8 @@ public class BBFModelProvider extends NLModelProvider {
 
         blockModelGenerators.createCrossBlockWithDefaultItem(BBFBlocks.SALTGRASS.get(), BlockModelGenerators.TintState.NOT_TINTED);
         blockModelGenerators.createCrossBlockWithDefaultItem(BBFBlocks.DRY_SALTGRASS.get(), BlockModelGenerators.TintState.NOT_TINTED);
+
+        blockModelGenerators.createFlowerBed(BBFBlocks.PURPLE_POSIES.get());
     }
 
     @Override

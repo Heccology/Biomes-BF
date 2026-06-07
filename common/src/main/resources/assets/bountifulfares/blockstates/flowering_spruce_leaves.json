@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "": [
+      {
+        "model":  "bountifulfares:block/flowering_spruce_leaves_0"
+      },
+      {
+        "model":  "bountifulfares:block/flowering_spruce_leaves_1"
+      },
+      {
+        "model":  "bountifulfares:block/flowering_spruce_leaves_2"
+      },
+      {
+        "model":  "bountifulfares:block/flowering_spruce_leaves_3"
+      },
+      {
+        "model":  "bountifulfares:block/flowering_spruce_leaves_4"
+      },
+      {
+        "model":  "bountifulfares:block/flowering_spruce_leaves_5"
+      },
+      {
+        "model":  "bountifulfares:block/flowering_spruce_leaves_6"
+      }
+    ]
+  }
+}

@@ -1,6 +1,8 @@
 package net.hecco.biomesbf.registry.content;
 
 import net.hecco.biomesbf.BiomesBF;
+import net.hecco.biomesbf.definition.block.FloweringSpruceLeavesBlock;
+import net.hecco.biomesbf.definition.block.PurplePosiesBlock;
 import net.hecco.biomesbf.definition.block.SaltgrassBlock;
 import net.hecco.bountifulfares.definition.block.custom.FruitLeavesBlock;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
@@ -35,12 +37,16 @@ public class BBFBlocks {
             Optional.empty(),
             Optional.empty());
 
-    public static final Supplier<Block> GOLDEN_WALNUT_LEAVES = registerBlock("golden_walnut_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().ignitedByLava().pushReaction(PushReaction.DESTROY)));
+    public static final Supplier<Block> GOLDEN_WALNUT_LEAVES = registerBlock("golden_walnut_leaves", Mineables.HOE, () -> new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().ignitedByLava().pushReaction(PushReaction.DESTROY)));
     public static final Supplier<Block> GOLDEN_WALNUT_SAPLING = registerBlock("golden_walnut_sapling", () -> new PublicSaplingBlock(GOLDEN_WALNUT_SAPLING_GENERATOR, BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).randomTicks().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final Supplier<Block> POTTED_GOLDEN_WALNUT_SAPLING = registerBlockNoItem("potted_golden_walnut_sapling", () -> new FlowerPotBlock(GOLDEN_WALNUT_SAPLING.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY)));
 
     public static final Supplier<Block> SALTGRASS = registerBlock("saltgrass", () -> new SaltgrassBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_GREEN).replaceable().noCollission().instabreak().sound(SoundType.SWEET_BERRY_BUSH).offsetType(BlockBehaviour.OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
     public static final Supplier<Block> DRY_SALTGRASS = registerBlock("dry_saltgrass", () -> new SaltgrassBlock(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).replaceable().noCollission().instabreak().sound(SoundType.SWEET_BERRY_BUSH).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+
+    public static final Supplier<Block> PURPLE_POSIES = registerBlock("purple_posies", () -> new PurplePosiesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().sound(SoundType.PINK_PETALS).pushReaction(PushReaction.DESTROY)));
+
+    public static final Supplier<Block> FLOWERING_SPRUCE_LEAVES = registerBlock("flowering_spruce_leaves", Mineables.HOE, () -> new FloweringSpruceLeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_LEAVES)));
 
 
 

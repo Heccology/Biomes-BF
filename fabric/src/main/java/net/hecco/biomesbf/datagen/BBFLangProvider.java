@@ -45,12 +45,15 @@ public class BBFLangProvider extends NLLanguageProvider {
 
         generate(translationBuilder, "biome.bountifulfares.walnut_forest", "Walnut Forest");
         generate(translationBuilder, "biome.bountifulfares.blooming_oasis", "Blooming Oasis");
+        generate(translationBuilder, "biome.bountifulfares.blooming_taiga", "Blooming Taiga");
 
         generate(translationBuilder, BBFBlocks.GOLDEN_WALNUT_LEAVES.get(), "Golden Walnut Leaves");
         generate(translationBuilder, BBFBlocks.GOLDEN_WALNUT_SAPLING.get(), "Golden Walnut Sapling");
         generate(translationBuilder, BBFBlocks.POTTED_GOLDEN_WALNUT_SAPLING.get(), "Golden Walnut Sapling");
         generate(translationBuilder, BBFBlocks.SALTGRASS.get(), "Saltgrass");
         generate(translationBuilder, BBFBlocks.DRY_SALTGRASS.get(), "Dry Saltgrass");
+        generate(translationBuilder, BBFBlocks.PURPLE_POSIES.get(), "Purple Posies");
+        generate(translationBuilder, BBFBlocks.FLOWERING_SPRUCE_LEAVES.get(), "Flowering Spruce Leaves");
     }
 
     public static Set<ResourceLocation> getBlockIdsInList(ArrayList<Supplier<Block>> list) {

@@ -20,11 +20,8 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public class BBFBiomes {
     public static final ResourceKey<Biome> BLOOMING_OASIS = ResourceKey.create(Registries.BIOME, BiomesBF.id("blooming_oasis"));
-    public static final ResourceKey<Biome> GOLDEN_SAVANNA = ResourceKey.create(Registries.BIOME, BiomesBF.id("golden_savanna"));
     public static final ResourceKey<Biome> WALNUT_FOREST = ResourceKey.create(Registries.BIOME, BiomesBF.id("walnut_forest"));
-    public static final ResourceKey<Biome> BLOOMING_FOREST = ResourceKey.create(Registries.BIOME, BiomesBF.id("blooming_forest"));
-    public static final ResourceKey<Biome> BLOOMING_GROVE = ResourceKey.create(Registries.BIOME, BiomesBF.id("blooming_grove"));
-    public static final ResourceKey<Biome> BLOOMING_RIVER = ResourceKey.create(Registries.BIOME, BiomesBF.id("blooming_river"));
+    public static final ResourceKey<Biome> BLOOMING_TAIGA = ResourceKey.create(Registries.BIOME, BiomesBF.id("blooming_taiga"));
 
     public static void register(BootstrapContext<Biome> context) {
         HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -32,8 +29,9 @@ public class BBFBiomes {
     }
 
     public static void registerBiomePlacement() {
-//        BiomePlacement.addSubOverworld(Biomes.DESERT, BLOOMING_OASIS, CriterionBuilder.ratioMax(RatioTargets.CENTER, 0.1f)); old, use for good oasis seed
+//        BiomePlacement.addSubOverworld(Biomes.DESERT, BLOOMING_OASIS, CriterionBuilder.ratioMax(RatioTargets.CENTER, 0.1f)); //old, use for good oasis seed
         BiomePlacement.addSubOverworld(Biomes.DESERT, BLOOMING_OASIS, CriterionBuilder.ratioMax(RatioTargets.CENTER, 0.115f));
+        BiomePlacement.addSubOverworld(Biomes.TAIGA, BLOOMING_TAIGA, CriterionBuilder.ratioMax(RatioTargets.CENTER, 0.14f));
 //        SurfaceRules.RuleSource blooming_oasis = SurfaceRules.ifTrue(SurfaceRules.isBiome(BLOOMING_OASIS), SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.0), SurfaceRules.state(Blocks.DIAMOND_BLOCK.defaultBlockState()))));
 //        SurfaceGeneration.addOverworldSurfaceRules(
 //                BiomesBF.id("rules/overworld"),

@@ -1,0 +1,7 @@
+{
+	"parent": "bountifulfares:block/leaves_with_overlay",
+	"textures": {
+		"all": "minecraft:block/spruce_leaves",
+		"overlay": "bountifulfares:block/flowering_spruce_leaves_6"
+	}
+}

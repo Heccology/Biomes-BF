@@ -1,0 +1,21 @@
+{
+  "feature": "bountifulfares:flower_blooming_taiga",
+  "placement": [
+    {
+      "type": "minecraft:noise_based_count",
+      "noise_factor": 2.0,
+      "noise_offset": 0.3,
+      "noise_to_count_ratio": 20
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "MOTION_BLOCKING"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

@@ -33,17 +33,22 @@
       "bountifulfares:oasis_palm",
       "bountifulfares:oasis_palm",
       "bountifulfares:oasis_palm",
+      "bountifulfares:oasis_palm",
       "bountifulfares:oasis_passion_fruit",
       "bountifulfares:small_oasis_palm",
-      "bountifulfares:orange_bush"
+      "bountifulfares:orange_bush",
+      "bountifulfares:flower_oasis",
+      "bountifulfares:flower_oasis",
+      "bountifulfares:flower_oasis",
+      "bountifulfares:flower_oasis",
+      "bountifulfares:flower_oasis"
     ],
     "outer_vegetation_features": [
+      "bountifulfares:flower_oasis",
       "bountifulfares:patch_grass_oasis",
       "bountifulfares:oasis_passion_fruit",
       "bountifulfares:small_oasis_palm",
       "bountifulfares:orange_bush",
-      "bountifulfares:patch_saltgrass_oasis",
-      "bountifulfares:patch_saltgrass_oasis",
       "bountifulfares:patch_saltgrass_oasis",
       "bountifulfares:patch_saltgrass_oasis",
       "bountifulfares:patch_saltgrass_oasis"

@@ -2,10 +2,7 @@ package net.hecco.biomesbf;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.hecco.biomesbf.datagen.BBFBlockTagProvider;
-import net.hecco.biomesbf.datagen.BBFLangProvider;
-import net.hecco.biomesbf.datagen.BBFLootTableProvider;
-import net.hecco.biomesbf.datagen.BBFModelProvider;
+import net.hecco.biomesbf.datagen.*;
 
 public class BiomesBFDatagen implements DataGeneratorEntrypoint {
     @Override
@@ -15,5 +12,6 @@ public class BiomesBFDatagen implements DataGeneratorEntrypoint {
         pack.addProvider(BBFLootTableProvider::new);
         pack.addProvider(BBFModelProvider::new);
         pack.addProvider(BBFBlockTagProvider::new);
+        pack.addProvider(BBFRecipeProvider::new);
     }
 }

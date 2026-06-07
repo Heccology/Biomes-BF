@@ -19,11 +19,16 @@ public class BBFBlockTagProvider extends NLBlockTagProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 
-        this.getOrCreateTagBuilder(BlockTags.LEAVES).add(BBFBlocks.GOLDEN_WALNUT_SAPLING.get());
+        this.getOrCreateTagBuilder(BlockTags.LEAVES).add(
+                BBFBlocks.GOLDEN_WALNUT_LEAVES.get(),
+                BBFBlocks.FLOWERING_SPRUCE_LEAVES.get()
+        );
 
         this.getOrCreateTagBuilder(BlockTags.SAPLINGS).add(BBFBlocks.GOLDEN_WALNUT_SAPLING.get());
 
         this.getOrCreateTagBuilder(BlockTags.FLOWER_POTS).add(BBFBlocks.POTTED_GOLDEN_WALNUT_SAPLING.get());
+
+        this.getOrCreateTagBuilder(BlockTags.FLOWERS).add(BBFBlocks.PURPLE_POSIES.get(), BBFBlocks.FLOWERING_SPRUCE_LEAVES.get());
 
         this.getOrCreateTagBuilder(BlockTags.REPLACEABLE).add(
                 BBFBlocks.SALTGRASS.get(),
