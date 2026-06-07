@@ -30,8 +30,8 @@ public class BBFBiomes {
 
     public static void registerBiomePlacement() {
 //        BiomePlacement.addSubOverworld(Biomes.DESERT, BLOOMING_OASIS, CriterionBuilder.ratioMax(RatioTargets.CENTER, 0.1f)); //old, use for good oasis seed
-        BiomePlacement.addSubOverworld(Biomes.DESERT, BLOOMING_OASIS, CriterionBuilder.ratioMax(RatioTargets.CENTER, 0.115f));
-        BiomePlacement.addSubOverworld(Biomes.TAIGA, BLOOMING_TAIGA, CriterionBuilder.ratioMax(RatioTargets.CENTER, 0.14f));
+        BiomePlacement.addSubOverworld(Biomes.DESERT, BLOOMING_OASIS, CriterionBuilder.ratioMax(RatioTargets.CENTER, 0.13f));
+        BiomePlacement.addSubOverworld(Biomes.TAIGA, BLOOMING_TAIGA, CriterionBuilder.ratioMax(RatioTargets.CENTER, 0.15f));
 //        SurfaceRules.RuleSource blooming_oasis = SurfaceRules.ifTrue(SurfaceRules.isBiome(BLOOMING_OASIS), SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.0), SurfaceRules.state(Blocks.DIAMOND_BLOCK.defaultBlockState()))));
 //        SurfaceGeneration.addOverworldSurfaceRules(
 //                BiomesBF.id("rules/overworld"),
