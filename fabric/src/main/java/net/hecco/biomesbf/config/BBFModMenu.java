@@ -25,14 +25,14 @@ public class BBFModMenu implements ModMenuApi {
         ConfigBuilder builder = ConfigBuilder.create()
                 .setParentScreen(parent)
                 .setSavingRunnable(BBFFabricConfigValues::save)
-                .setTitle(Component.translatable("subterrous.configuration.title"));
+                .setTitle(Component.translatable("biomesbf.configuration.title"));
         ConfigEntryBuilder entryBuilder = builder.entryBuilder();
         BBFFabricConfigValues.CATEGORIES.values().stream().filter(category -> !category.isChild()).forEach(category -> buildCategory(builder, entryBuilder, category));
         return builder.build();
     }
 
     private void buildCategory(ConfigBuilder builder, ConfigEntryBuilder entryBuilder, Category category) {
-        ConfigCategory configCategory = builder.getOrCreateCategory(Component.translatable("subterrous.configuration." + category.title()));
+        ConfigCategory configCategory = builder.getOrCreateCategory(Component.translatable("biomesbf.configuration." + category.title()));
         List<Entry<?>> entries = new ArrayList<>();
         for (String id : category.values()) {
             buildEntries(id, entries);
@@ -49,7 +49,7 @@ public class BBFModMenu implements ModMenuApi {
             configCategory.addEntry(entry.build(entryBuilder));
             }
         });
-        children.forEach(entry -> configCategory.addEntry(buildSubCategory(entryBuilder.startSubCategory(Component.translatable("subterrous.configuration." + entry.title())), entryBuilder, entry)));
+        children.forEach(entry -> configCategory.addEntry(buildSubCategory(entryBuilder.startSubCategory(Component.translatable("biomesbf.configuration." + entry.title())), entryBuilder, entry)));
 
     }
 
@@ -58,23 +58,23 @@ public class BBFModMenu implements ModMenuApi {
             var value = BBFFabricConfigValues.BOOL_CONFIGS.get(id);
             String tooltip = "";
             if (value.getC()) {
-                tooltip = "subterrous.configuration.restart_warning";
+                tooltip = "biomesbf.configuration.restart_warning";
             }
-            entries.add(Entry.booleanEntry("subterrous.configuration." + value.getA(), () -> BiomesBFFabric.CONFIG.getBoolConfigValue(id), newValue -> BiomesBFFabric.CONFIG.setBoolConfigValue(id, newValue), value.getB(), tooltip));
+            entries.add(Entry.booleanEntry("biomesbf.configuration." + value.getA(), () -> BiomesBFFabric.CONFIG.getBoolConfigValue(id), newValue -> BiomesBFFabric.CONFIG.setBoolConfigValue(id, newValue), value.getB(), tooltip));
         }
         if (BBFFabricConfigValues.INT_CONFIGS.containsKey(id)) {
             var value = BBFFabricConfigValues.INT_CONFIGS.get(id);
             String tooltip = "";
             if (value.getC()) {
-                tooltip = "subterrous.configuration.restart_warning";
+                tooltip = "biomesbf.configuration.restart_warning";
             }
-            entries.add(Entry.integerEntry("subterrous.configuration." + value.getA(), () -> BiomesBFFabric.CONFIG.getIntConfigValue(id), newValue -> BiomesBFFabric.CONFIG.setIntConfigValue(id, newValue), value.getB().defaultValue, value.getB().min, value.getB().max, tooltip));
+            entries.add(Entry.integerEntry("biomesbf.configuration." + value.getA(), () -> BiomesBFFabric.CONFIG.getIntConfigValue(id), newValue -> BiomesBFFabric.CONFIG.setIntConfigValue(id, newValue), value.getB().defaultValue, value.getB().min, value.getB().max, tooltip));
         }
         if (BBFFabricConfigValues.ENUM_CONFIGS.containsKey(id)) {
             var value = BBFFabricConfigValues.ENUM_CONFIGS.get(id);
             String tooltip = "";
             if (value.getD()) {
-                tooltip = "subterrous.configuration.restart_warning";
+                tooltip = "biomesbf.configuration.restart_warning";
             }
             addEnumEntry(entries, id, value, tooltip);
         }
@@ -85,7 +85,7 @@ public class BBFModMenu implements ModMenuApi {
         Enum defaultValue = value.getC();
 
         entries.add(Entry.enumEntry(
-                "subterrous.configuration." + value.getA(),
+                "biomesbf.configuration." + value.getA(),
                 () -> BiomesBFFabric.CONFIG.getEnumConfigValue(id),
                 newValue -> BiomesBFFabric.CONFIG.setEnumConfigValue(id, newValue),
                 enumClass,
@@ -110,7 +110,7 @@ public class BBFModMenu implements ModMenuApi {
                 children.add(BBFFabricConfigValues.CATEGORIES.get(id));
             }
         }
-        children.forEach(entry -> subCategoryBuilder.add(buildSubCategory(entryBuilder.startSubCategory(Component.translatable("subterrous.configuration." + entry.title())), entryBuilder, entry)));
+        children.forEach(entry -> subCategoryBuilder.add(buildSubCategory(entryBuilder.startSubCategory(Component.translatable("biomesbf.configuration." + entry.title())), entryBuilder, entry)));
         return subCategoryBuilder.build();
     }
 }

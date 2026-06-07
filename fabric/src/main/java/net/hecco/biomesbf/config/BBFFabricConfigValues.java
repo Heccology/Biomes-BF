@@ -101,7 +101,7 @@ public class BBFFabricConfigValues implements net.hecco.biomesbf.config.ConfigVa
     }
 
 
-    private static final File CONFIG_FILE = new File(FabricLoader.getInstance().getConfigDir().toFile(), "subterrous.json");
+    private static final File CONFIG_FILE = new File(FabricLoader.getInstance().getConfigDir().toFile(), "biomesbf.json");
 
     public static BBFFabricConfigValues load() {
         BBFFabricConfigValues configuration = new BBFFabricConfigValues();
