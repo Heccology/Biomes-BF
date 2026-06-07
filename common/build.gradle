@@ -23,7 +23,7 @@ repositories {
 dependencies {
     implementation files("nexuslib-neoforge-1.21.1-${nexuslib_version}.jar")
     implementation ("curse.maven:biolith-852512:${neoforge_biolith_cursemaven}")
-    implementation files("bountifulfares-neoforge-1.21.1-3.0.10.jar")
+    implementation files("bountifulfares-neoforge-1.21.1-${bf_version}.jar")
 //    implementation ("curse.maven:bountiful-fares-972289:${neoforge_bf_cursemaven}")
 
     compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'

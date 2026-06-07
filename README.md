@@ -1,32 +1,46 @@
-# MultiLoader Template
+**Biomes of Bountiful Fares is an addon for [Bountiful Fares](https://modrinth.com/mod/bountiful-fares) that adds new biomes to the world centered around content from the base mod!**
+<br>
+<br>
 
-This project provides a Gradle project template that can compile Minecraft mods for multiple modloaders using a common project for the sources. This project does not require any third party libraries or dependencies. If you have any questions or want to discuss the project, please join our [Discord](https://discord.myceliummod.network).
+![Features](https://cdn.modrinth.com/data/cached_images/0418a9c6cba2880676b82f869e5098d41d578819.png)
 
-## Getting Started
+#### - Walnut Forest biome
+#### - Blooming Oasis biome (Desert sub biome)
+#### - Blooming Taiga biome (Taiga sub biome)
+#### - New Foliage found in these biomes and around the world
 
-### IntelliJ IDEA
-This guide will show how to import the MultiLoader Template into IntelliJ IDEA. The setup process is roughly equivalent to setting up the modloaders independently and should be very familiar to anyone who has worked with their MDKs.
+<br>
+<br>
 
-1. Clone or download this repository to your computer.
-2. Configure the project by setting the properties in the `gradle.properties` file. You will also need to change the `rootProject.name`  property in `settings.gradle`, this should match the folder name of your project, or else IDEA may complain.
-3. Open the template's root folder as a new project in IDEA. This is the folder that contains this README.md file and the gradlew executable.
-4. If your default JVM/JDK is not Java 21 you will encounter an error when opening the project. This error is fixed by going to `File > Settings > Build, Execution, Deployment > Build Tools > Gradle > Gradle JVM` and changing the value to a valid Java 21 JVM. You will also need to set the Project SDK to Java 21. This can be done by going to `File > Project Structure > Project SDK`. Once both have been set open the Gradle tab in IDEA and click the refresh button to reload the project.
-5. Open your Run/Debug Configurations. Under the `Application` category there should now be options to run Fabric and NeoForge projects. Select one of the client options and try to run it.
-6. Assuming you were able to run the game in step 5 your workspace should now be set up.
+![Frequently asked questions](https://cdn.modrinth.com/data/cached_images/7083d0b815d527fb670ba807c3c4f793662463c7.png)
 
-### Eclipse
-While it is possible to use this template in Eclipse it is not recommended. During the development of this template multiple critical bugs and quirks related to Eclipse were found at nearly every level of the required build tools. While we continue to work with these tools to report and resolve issues support for projects like these are not there yet. For now Eclipse is considered unsupported by this project. The development cycle for build tools is notoriously slow so there are no ETAs available.
+### Is Bountiful Fares a Farmer's Delight addon?
+No, it's an independent mod.
 
-## Development Guide
-When using this template the majority of your mod should be developed in the `common` project. The `common` project is compiled against the vanilla game and is used to hold code that is shared between the different loader-specific versions of your mod. The `common` project has no knowledge or access to ModLoader specific code, apis, or concepts. Code that requires something from a specific loader must be done through the project that is specific to that loader, such as the `fabric` or `neoforge` projects.
+### Can I use this mod in a modpack/server/other content?
+Absolutely!
 
-Loader specific projects such as the `fabric` and `neoforge` project are used to load the `common` project into the game. These projects also define code that is specific to that loader. Loader specific projects can access all the code in the `common` project. It is important to remember that the `common` project can not access code from loader specific projects.
+### Can I use this mod's models/textures for a separate project?
+No, please don't use any of it's models/textures for anything else, even with credit. (Check license on github)
 
-## Removing Platforms and Loaders
-While this template has support for many modloaders, new loaders may appear in the future, and existing loaders may become less relevant.
+### I noticed an issue/bug with this mod or have a suggestion, how can I let you know?
+You can either report it on the mod's [GitHub page](https://github.com/Heccology/Biomes-BF/issues) (preferred), or in my [Discord Server](https://discord.gg/yrDsSeNkWu).
+<br>
+<br>
 
-Removing loader specific projects is as easy as deleting the folder, and removing the `include("projectname")` line from the `settings.gradle` file.
-For example if you wanted to remove support for `forge` you would follow the following steps:
+![Other projects](https://cdn.modrinth.com/data/cached_images/36cf97f8f72aa922ede33497f05fcc15f1079e13.png)
 
-1. Delete the subproject folder. For example, delete `MultiLoader-Template/forge`.
-2. Remove the project from `settings.gradle`. For example, remove `include("forge")`. 
+[![Bountiful Fares](https://cdn.modrinth.com/data/cached_images/11c21a3553c18541e4aadad7927d438539155a7f.png)](https://modrinth.com/mod/bountiful-fares)
+[![NexusLib](https://cdn.modrinth.com/data/cached_images/5f8bf4fcef2b25ec0fe2e7e2ebf23785d9bc8267.png)](https://modrinth.com/mod/nexuslib)
+[![appledog!](https://cdn.modrinth.com/data/cached_images/3ca7b844afe710794076d650c54fc0b16f9846da_0.webp)](https://modrinth.com/mod/appledog)
+<br>
+<br>
+
+![Contact](https://cdn.modrinth.com/data/cached_images/ac51ec56b18549c94f20973ac5c8d520a5bfbc0d.png)
+
+[![Discord logo](https://cdn.modrinth.com/data/cached_images/580b5f7f4f2d41ff0f6ee3e06caead00a6747e5d.png)](https://discord.com/invite/yrDsSeNkWu)
+[![Bluesky logo](https://cdn.modrinth.com/data/cached_images/439d1bf0de9cb55be3270cc1e1e2aa6149f9598e.png)](https://bsky.app/profile/hecco.bsky.social)
+[![Twitter / X logo](https://cdn.modrinth.com/data/cached_images/a5b793cfc096e5677e0828de3aad077c729c8bc1.png)](https://x.com/Hecco)
+[![Kofi logo](https://cdn.modrinth.com/data/cached_images/aa2ff27fa029d3462e365929eef8f4f9e1f69405.png)](https://ko-fi.com/hecco)
+##
+You can report bugs on [GitHub](https://github.com/Heccology/Bountiful-Fares/issues) or in my [Discord Server](https://discord.gg/yrDsSeNkWu).

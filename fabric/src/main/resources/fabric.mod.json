@@ -8,8 +8,9 @@
         "${mod_author}"
     ],
     "contact": {
-        "homepage": "https://fabricmc.net/",
-        "sources": "https://github.com/FabricMC/fabric-example-mod"
+        "homepage": "https://linktr.ee/thehecco",
+        "sources": "https://github.com/Heccology/Biomes-BF",
+        "issues": "https://github.com/Heccology/Biomes-BF/issues"
     },
     "license": "${license}",
     "icon": "${mod_id}.png",
@@ -36,7 +37,9 @@
         "fabricloader": ">=${fabric_loader_version}",
         "fabric-api": "*",
         "minecraft": "${minecraft_version}",
-        "java": ">=${java_version}"
+        "java": ">=${java_version}",
+        "nexuslib": ">=${nexuslib_version}",
+        "bountifulfares": ">=${bf_version}"
     },
     "suggests": {
         "another-mod": "*"
