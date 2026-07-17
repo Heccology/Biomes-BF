@@ -1,0 +1,20 @@
+{
+  "biome.bountifulfares.blooming_oasis": "꽃피는 오아시스",
+  "biome.bountifulfares.blooming_taiga": "꽃피는 타이가",
+  "biome.bountifulfares.walnut_forest": "호두나무 숲",
+  "biomesbf.configuration.common": "게임플레이",
+  "biomesbf.configuration.generate_beach_saltgrass": "해변에 솔트그라스 생성",
+  "biomesbf.configuration.generate_blooming_oasis": "꽃피는 오아시스 생성",
+  "biomesbf.configuration.generate_blooming_taiga": "꽃피는 타이가 생성",
+  "biomesbf.configuration.generate_walnut_forest": "호두나무 숲 생성",
+  "biomesbf.configuration.restart_warning": "변경 사항을 적용하려면 게임을 다시 시작해야 합니다",
+  "biomesbf.configuration.title": "Biomes of Bountiful Fares 설정",
+  "block.bountifulfares.dry_saltgrass": "말라붙은 솔트그라스",
+  "block.bountifulfares.flowering_spruce_leaves": "꽃이 핀 가문비나무 잎",
+  "block.bountifulfares.golden_walnut_leaves": "황금 호두나무 잎",
+  "block.bountifulfares.golden_walnut_sapling": "황금 호두나무 묘목",
+  "block.bountifulfares.potted_golden_walnut_sapling": "화분에 심은 황금 호두나무 묘목",
+  "block.bountifulfares.purple_posies": "보라색 꽃다발",
+  "block.bountifulfares.saltgrass": "솔트그라스",
+  "itemgroup.biomesbf": "Biomes of Bountiful Fares"
+}
